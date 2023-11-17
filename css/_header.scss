@@ -1,0 +1,177 @@
+@mixin sp {
+  @media(max-width: 768px) {
+    @content;
+  }
+}
+
+#header-top-mask {
+  display: none;
+}
+
+#header-top-mask.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.8;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: #fff;
+
+  @include sp {
+    padding: 0 16px;
+  }
+}
+
+.header-logo {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#hamburger-navigation {
+  width: 30rem;
+  height: 100vh;
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  opacity: 0;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  visibility: hidden;
+
+  animation: slideinLeft 0.8s;
+
+  @keyframes slideinLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-30rem);
+    }
+  }
+}
+
+#hamburger-navigation.active {
+  opacity: 1;
+  visibility: visible;
+
+  animation: slideinRight 0.8s;
+
+  @keyframes slideinRight {
+    0% {
+      transform: translateX(-30rem);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.hamburger-sections {
+  padding: 5rem 2rem 5rem;
+
+  li {
+    font-size: 1.4rem;
+    border-top: #fff solid 1px;
+    width: 25rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  li:last-child {
+    border-bottom: #fff solid 1px;
+    width: 25rem;
+  }
+}
+
+.hamburger-sections-sns {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  li {
+    font-size: 1.4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.hamburger-menu {
+  display: block;
+  width: 3rem;
+  height: 2rem;
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.hamburger-menu.active {
+  background-color: transparent;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 3rem;
+  height: 0.2rem;
+  background: #333;
+  position: absolute;
+  transition: 0.4s ease;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top: 1rem;
+}
+
+.hamburger-menu span:nth-child(3) {
+  top: 2rem;
+}
+
+// ハンバーガーメニューの線の回転 --ここから--
+.hamburger-menu.active span:nth-child(1) {
+  top: 1rem;
+  transform: rotate(-135deg);
+  background-color: white;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  top: 1rem;
+  transform: rotate(135deg);
+  background-color: white;
+}
+// ハンバーガーメニューの線の回転 --ここまで--
+
+.header-movie {
+  display: block;
+  width: 100%;
+  // height: 60rem;
+  margin: 8rem auto 0;
+}

@@ -1,0 +1,56 @@
+@mixin sp {
+  @media(max-width: 768px) {
+    @content;
+  }
+}
+
+.pick_up_area {
+  margin: 10rem auto;
+  overflow-x: hidden;
+
+  h2 {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    color: #121212;
+    margin-bottom: 3rem;
+  }
+
+  .pick_up_area_pictures {
+    // display: flex;
+    // justify-content: center;
+    // column-gap: 6rem;
+    // flex-wrap: nowrap;
+
+    img {
+      // width: 36rem;
+      width: 100%;
+      // height: 24rem;
+      // height: auto;
+      aspect-ratio: 360 / 240;
+      // margin: 0 auto;
+      // padding: 0 3rem;
+      object-fit: cover;
+
+      // @include sp {
+      //   height: 50vh;
+        // margin: auto;
+      //   max-height: 100%;
+      //   max-width: 100%;
+      //   object-fit: cover;
+        // width: 100%;
+      // }
+    }
+
+    .slick-slide {
+      // margin: 0 3rem;
+      // margin: 0 auto;
+      padding: 0 10px;
+
+      // @include sp {
+      //   padding: 0 1rem;
+      // }
+    }
+  }
+}

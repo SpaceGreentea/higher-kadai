@@ -1,5 +1,10 @@
 @charset "utf-8";
 
-body {
+@use 'header';
+@use 'pick_up';
+@use 'feature';
+@use 'footer';
 
+html {
+  font-size: 62.5%; /* 10px */
 }

@@ -1,0 +1,103 @@
+@mixin sp {
+  @media(max-width: 768px) {
+    @content;
+  }
+}
+
+.feature_area {
+  // max-width: 120.7rem;
+  max-width: 124rem;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+
+  h2 {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    color: #121212;
+    margin-bottom: 3rem;
+  }
+
+  .feature_container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    place-items: center;
+    // grid-template-columns: repeat(3, 1fr);
+
+    // grid-template-columns: repeat(auto-fit, minmax(38.5rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(28.5rem, 1fr));
+    
+    // grid-template-rows: repeat(3, 38.5rem);
+    gap: 2.6rem 2.6rem;
+
+    figure {
+      box-shadow: 0 0 3px 2px;
+      width: 100%;
+
+      img {
+        // width: 38.5rem;
+        width: 100%;
+        // max-width: 100%;
+        aspect-ratio: 385 / 257;
+        object-fit: cover;
+      }
+
+      .fade {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1.5s, transform 1s;
+      }
+
+      .fade.active {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+
+      figcaption {
+        // width: 38.5rem;
+        // width: 100%;
+        // height: 16.7rem;
+        height: auto;
+        background: greenyellow;
+
+        h5 {
+          font-family: Arial;
+          font-weight: normal;
+          font-size: 1.2rem;
+          line-height: 2.04rem;
+          // text-align: center;
+          color: #121212;
+          padding-top: 3rem;
+          padding-left: 3rem;
+        }
+
+        .figcaption_text {
+          font-family: Arial;
+          font-weight: normal;
+          font-size: 1.44rem;
+          line-height: 2.448rem;
+          // text-align: left;
+          color: #121212;
+          // width: 31.2rem;
+          padding-top: 2rem;
+          padding-right: 4.3rem;
+          padding-left: 3rem;
+        }
+
+        .figcaption_date {
+          font-family: Arial;
+          font-weight: normal;
+          font-size: 1.2rem;
+          line-height: 2.04rem;
+          text-align: right;
+          color: #121212;
+          padding-top: 2rem;
+          // padding-top: 0.8vw;
+          padding-right: 3rem;
+        }
+      }
+    }
+  }
+}
